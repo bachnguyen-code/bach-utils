@@ -4,7 +4,7 @@ const crypto = require('crypto');
 class SmartOTP {
   #config = {
     algorithm: 'sha256',
-    factor: 5 * 1000,
+    factor: 5, // seconds
     hexLength: 4,
   };
 
@@ -44,7 +44,8 @@ class SmartOTP {
    * @returns timestamp / factor
    */
   #getOtpChangingParameter(timestamp) {
-    return parseInt(timestamp / this.#config.factor);
+    const factor = this.#config.factor * 1000;
+    return parseInt(timestamp / factor);
   }
 
   /**
