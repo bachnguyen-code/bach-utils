@@ -1,0 +1,37 @@
+{
+  "license": "MIT",
+  "name": "bach-utils",
+  "main": "src/index.js",
+  "author": "Bach Nguyen <bachnguyen.code@gmail.com>",
+  "email": "bachnguyen.code@gmail.com",
+  "version": "1.0.0",
+  "description": "A packaged for fun",
+  "homepage": "https://github.com/bachnguyen-code/bach-utils",
+  "bugs": {
+    "url": "https://github.com/bachnguyen-code/bach-utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bachnguyen-code/bach-utils.git"
+  },
+  "keywords": [
+    "jwt",
+    "smartOTP"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "moment": "^2.29.3"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.1.9"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "build": "uglifyjs src/index.js -c -m eval --comments -o build/bach-utils.min.js"
+  },
+  "nyc": {
+    "exclude": [
+      "tests"
+    ]
+  }
+}
